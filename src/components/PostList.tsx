@@ -1,4 +1,4 @@
-import { Post } from './types/Post';
+import { Post } from "../types/Post";
 
 type Props = {
   posts: Post[];
@@ -10,16 +10,16 @@ export const PostList: React.FC<Props> = ({ posts }) => (
       <tr className="has-background-link-light">
         <th>#</th>
         <th>Title</th>
-        <th>User</th>
+        <th>Theme</th>
       </tr>
     </thead>
 
     <tbody>
-      {posts.map(post => (
+      {posts.map((post) => (
         <tr key={post.id}>
           <td>{post.id}</td>
           <td>{post.title}</td>
-          <td>{post.userId}</td>
+          <td>{post.user?.email}</td>
         </tr>
       ))}
     </tbody>
